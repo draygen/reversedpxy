@@ -1,3 +1,36 @@
+<<<<<<< HEAD
+# fly.toml app configuration file generated for reversedprxy on 2025-01-21T00:48:34-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'reversedprxy'
+primary_region = 'bos'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 8080
+
+  [[services.ports]]
+    port = 80
+    handlers = ['http']
+
+[[vm]]
+  memory = '2gb'
+  cpu_kind = 'shared'
+  cpus = 1
+=======
 app = "reversedpxy"
 primary_region = "bos"
 
@@ -11,3 +44,4 @@ primary_region = "bos"
   [[services.ports]]
     handlers = ["http"]
     port = 80
+>>>>>>> e7dac3c06bacc00d43a45cf3e847f539db1991e2
