@@ -1,10 +1,19 @@
 FROM node:16-alpine
+
+# Set working directory
 WORKDIR /app
-COPY . .
+
+# Copy only necessary files
+COPY package*.json ./
+
+# Install dependencies
 RUN npm install
-CMD ["node", "server.js"]
-FROM node:16-alpine
-WORKDIR /app
+
+# Copy application code
 COPY . .
-RUN npm install
+
+# Expose app port
+EXPOSE 8080
+
+# Run the app
 CMD ["node", "server.js"]

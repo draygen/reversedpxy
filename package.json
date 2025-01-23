@@ -1,7 +1,7 @@
 {
-  "name": "reverse-proxy",
+  "name": "reversedpxy",
   "version": "1.0.0",
-  "description": "A reverse proxy to redirect traffic to freek.to using Node.js and Express",
+  "description": "Reverse proxy to freek.to",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -10,12 +10,6 @@
     "express": "^4.18.2",
     "http-proxy-middleware": "^2.0.6"
   },
-  "keywords": [
-    "reverse-proxy",
-    "proxy",
-    "nodejs",
-    "express"
-  ],
   "author": "Brian Wallace",
   "license": "MIT"
 }

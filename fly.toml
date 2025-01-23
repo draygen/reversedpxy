@@ -1,26 +1,23 @@
-app = "reversedpxy"
-primary_region = "bos"
+# fly.toml app configuration file generated for reversedpxy-green-field-8385 on 2025-01-21T01:39:53-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'reversedpxy-green-field-8385'
+primary_region = 'bos'
 
 [build]
-  dockerfile = "Dockerfile"
-
-[processes]
-
-[env]
-
-[mounts]
-  source = "valid_volume_name"
-  destination = "/data"
-
-[resources]
-  memory = "2gb"
-  cpu_kind = "shared"
-  cpus = 1
+  dockerfile = 'Dockerfile'
 
 [[services]]
+  protocol = 'tcp'
   internal_port = 8080
-  protocol = "tcp"
 
   [[services.ports]]
-    handlers = ["http"]
     port = 80
+    handlers = ['http']
+
+[[vm]]
+  memory = '2gb'
+  cpu_kind = 'shared'
+  cpus = 1
